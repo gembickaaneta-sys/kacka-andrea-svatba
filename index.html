@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kačka & Andrea SE BEROU! | 90's HITS Svatba</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Hravé retro 90s fonty a čitelné ručně psané/bezpatkové písmo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome pro ikony -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        night: {
+                            950: '#120621',
+                            900: '#1b0933',
+                            800: '#2a0f4d',
+                        },
+                        retroPink: '#ff3e9d',
+                        retroPinkDark: '#d61c78',
+                        retroCream: '#fdf0b3',
+                        retroLavender: '#e5ccff',
+                        retroGold: '#f5d77f',
+                    },
+                    fontFamily: {
+                        retro: ['"Shrikhand"', 'cursive'],
+                        display: ['"Fredoka"', 'sans-serif'],
+                        hand: ['"Patrick Hand"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 18s linear infinite',
+                        'pulse-neon': 'pulseNeon 3s ease-in-out infinite',
+                        'float': 'float 5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseNeon: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 12px #ff3e9d) drop-shadow(0 0 25px #ff3e9d)' },
+                            '50%': { filter: 'drop-shadow(0 0 6px #ff3e9d) drop-shadow(0 0 14px #c71585)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Základní pozadí a synthwave mřížka podle plakátu */
+        body {
+            background-color: #160828;
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(114, 38, 179, 0.35) 0%, transparent 55%),
+                radial-gradient(circle at 85% 5%, rgba(255, 62, 157, 0.25) 0%, transparent 40%),
+                linear-gradient(180deg, #1b0933 0%, #240c42 50%, #150726 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Spodní retro laserová mřížka */
+        .synthwave-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 62, 157, 0.25) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 62, 157, 0.25) 1px, transparent 1px);
+            background-size: 42px 28px;
+            transform: perspective(350px) rotateX(55deg);
+            transform-origin: bottom center;
+        }
+
+        /* 90's textové stíny */
+        .text-shadow-retro {
+            text-shadow: 3px 3px 0px #120621, 0 0 20px rgba(253, 240, 179, 0.3);
+        }
+        .text-shadow-pink {
+            text-shadow: 3px 3px 0px #120621, 0 0 24px rgba(255, 62, 157, 0.65);
+        }
+
+        /* Růžová stuha "SE BEROU!" */
+        .ribbon-banner {
+            background: linear-gradient(90deg, #e84393 0%, #ff5eae 50%, #e84393 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 96% 50%, 100% 100%, 0% 100%, 4% 50%);
+            box-shadow: 0 8px 25px rgba(255, 62, 157, 0.45);
+        }
+
+        /* Disko koule CSS efekt */
+        .disco-ball {
+            background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f3d1ff 20%, #b565d8 55%, #4a156b 85%, #1f0633 100%);
+            box-shadow: 0 0 40px rgba(255, 110, 199, 0.5), inset -10px -10px 25px rgba(18, 6, 33, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        .disco-ball::after {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
+            background-size: 14px 14px;
+            border-radius: 50%;
+            transform: rotate(-15deg);
+        }
+
+        /* Vinylová deska */
+        .vinyl-record {
+            background: repeating-radial-gradient(
+                circle at center,
+                #111 0px,
+                #111 3px,
+                #262626 4px,
+                #141414 6px
+            );
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(253, 240, 179, 0.2);
+        }
+
+        /* Vlastní scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120621;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff3e9d;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-retroPink selection:text-white relative min-h-screen">
+
+    <!-- Dekorativní zlatý vnější rámeček (věrný plakátu) -->
+    <div class="fixed inset-2 sm:inset-3 border border-retroGold/30 rounded-2xl pointer-events-none z-40"></div>
+
+    <!-- Dekorativní VINYLOVÁ DESKA v levém horním rohu -->
+    <div class="fixed -left-24 top-20 sm:-left-20 sm:top-24 w-44 h-44 sm:w-56 sm:h-56 rounded-full vinyl-record border-4 border-neutral-800 flex items-center justify-center pointer-events-none z-10 opacity-90 animate-spin-slow">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-retroPink to-retroGold flex items-center justify-center border-2 border-white/40">
+            <div class="w-4 h-4 rounded-full bg-night-950"></div>
+        </div>
+    </div>
+
+    <!-- Dekorativní DISKO KOULE v pravém horním rohu -->
+    <div class="fixed -right-12 -top-10 sm:-right-10 sm:-top-8 w-36 h-36 sm:w-48 sm:h-48 rounded-full disco-ball pointer-events-none z-10 opacity-95">
+        <!-- Odlesky světla -->
+        <div class="absolute top-6 left-8 w-4 h-4 bg-white rounded-full blur-[1px] animate-ping"></div>
+        <div class="absolute bottom-10 right-12 w-3 h-3 bg-retroCream rounded-full blur-[1px] animate-pulse"></div>
+    </div>
+
+    <!-- HLAVNÍ KONTEJNER STRÁNKY -->
+    <main class="relative z-20 max-w-4xl mx-auto px-4 sm:px-8 pt-10 pb-24">
+
+        <!-- 1. HERO SEKCE -->
+        <header class="text-center flex flex-col items-center">
+            <!-- Hlavní nadpis Kačka & Andrea -->
+            <h1 class="font-retro text-4xl sm:text-6xl md:text-7xl text-retroCream tracking-wide text-shadow-retro transform -rotate-1">
+                Kačka &amp; Andrea
+            </h1>
+
+            <!-- Růžová stuha SE BEROU! -->
+            <div class="mt-2 sm:mt-3 inline-flex items-center justify-center gap-3">
+                <div class="ribbon-banner px-8 sm:px-12 py-1.5 sm:py-2 transform -rotate-2">
+                    <span class="font-display font-extrabold italic text-xl sm:text-3xl tracking-wider text-night-950 uppercase">
+                        SE BEROU!
+                    </span>
+                </div>
+                <!-- Ručně kreslené srdíčko -->
+                <svg class="w-9 h-9 sm:w-11 sm:h-11 text-retroPink animate-float" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+
+            <!-- Úvodní text z pozvánky -->
+            <p class="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-purple-100/95 leading-relaxed font-medium px-2">
+                Kdysi jsme pařily na kazetách, dnes paříme na životě.<br class="hidden sm:inline">
+                Tehdy jsme sbíraly plakáty, dnes sbíráme společné zážitky.<br class="hidden sm:inline">
+                A protože nejlepší příběhy nikdy nekončí jedním hitem,<br class="hidden sm:inline">
+                rozhodly jsme se napsat náš další příběh... <span class="text-retroPink">♡</span>
+            </p>
+
+            <!-- Velký retro titulek 90's HITS s paprsky po stranách -->
+            <div class="mt-7 sm:mt-9 relative flex items-center justify-center select-none">
+                <!-- Levé paprsky -->
+                <svg class="w-10 h-14 sm:w-14 sm:h-20 text-retroCream mr-1 sm:mr-3" viewBox="0 0 50 80" fill="none">
+                    <line x1="42" y1="22" x2="12" y2="10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="38" y1="40" x2="6" y2="40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="42" y1="58" x2="12" y2="70" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+
+                <div class="flex flex-wrap items-baseline justify-center gap-2 sm:gap-4 transform -rotate-2">
+                    <span class="font-retro text-6xl sm:text-8xl md:text-9xl text-retroCream text-shadow-retro leading-none">
+                        90’s
+                    </span>
+                    <span class="font-sans font-black italic text-5xl sm:text-7xl md:text-8xl text-retroPink text-shadow-pink tracking-tight leading-none relative">
+                        HITS
+                        <!-- Podtržení pod HITS -->
+                        <span class="block h-1.5 sm:h-2 w-full bg-retroPink rounded-full mt-1 shadow-[0_0_12px_#ff3e9d]"></span>
+                    </span>
+                </div>
+
+                <!-- Pravé paprsky -->
+                <svg class="w-10 h-14 sm:w-14 sm:h-20 text-retroCream ml-1 sm:ml-3" viewBox="0 0 50 80" fill="none">
+                    <line x1="8" y1="22" x2="38" y2="10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="12" y1="40" x2="44" y2="40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="8" y1="58" x2="38" y2="70" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <!-- Podtitul -->
+            <p class="mt-3 font-hand text-2xl sm:text-3xl tracking-widest text-white uppercase">
+                SVATBA &amp; DISKOTÉKA V <span class="underline decoration-retroPink decoration-2 underline-offset-4">JEDNOM!</span>
+            </p>
+        </header>
+
+        <!-- 2. INFORMAČNÍ LIŠTA (Datum, Obřad, Místo + Odpočet) -->
+        <section class="mt-10 relative">
+            <!-- Propletené snubní prstýnky nahoře na rámečku -->
+            <div class="flex justify-center -mb-4 relative z-10">
+                <div class="bg-night-900 px-3 rounded-full">
+                    <svg class="w-14 h-9 text-retroGold" viewBox="0 0 64 36" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="24" cy="18" r="13"/>
+                        <circle cx="40" cy="18" r="13"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Oválný zlatý rámeček -->
+            <div class="border-2 border-retroGold/80 bg-night-950/75 backdrop-blur-md rounded-3xl sm:rounded-full px-5 py-5 sm:px-8 sm:py-4 shadow-[0_0_30px_rgba(245,215,127,0.15)]">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center text-center">
+                    
+                    <!-- Datum -->
+                    <div class="flex items-center justify-center gap-3 md:border-r md:border-retroGold/40 md:pr-4">
+                        <i class="fa-regular fa-calendar-days text-2xl sm:text-3xl text-retroCream"></i>
+                        <div class="text-left">
+                            <span class="block font-display font-bold text-2xl sm:text-3xl text-white tracking-wide">
+                                15. 5. 2027
+                            </span>
+                            <span id="countdown-badge" class="text-xs font-semibold text-retroCream/90">
+                                Načítám odpočet...
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Růžový oválný odznak OBŘAD VE 14 HODIN -->
+                    <div class="flex justify-center">
+                        <div class="bg-gradient-to-b from-[#ff5eae] to-[#d61c78] border-2 border-retroPink/60 rounded-2xl px-6 py-2.5 shadow-[0_0_20px_rgba(255,62,157,0.5)] transform hover:scale-105 transition">
+                            <span class="block font-display font-extrabold text-night-950 text-base sm:text-lg leading-tight uppercase">
+                                OBŘAD<br>VE 14 HODIN
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Místo konání -->
+                    <div class="flex items-center justify-center gap-3 md:border-l md:border-retroGold/40 md:pl-4">
+                        <i class="fa-solid fa-location-dot text-2xl sm:text-3xl text-retroCream shrink-0"></i>
+                        <a href="#misto-konani" class="text-left group">
+                            <span class="block font-bold italic text-base sm:text-lg text-white group-hover:text-retroCream transition">
+                                Kalikovský mlýn
+                            </span>
+                            <span class="block text-xs sm:text-sm italic text-purple-200">
+                                Radčická 60/40, 301 00 Plzeň
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Rychlé tlačítko na RSVP -->
+            <div class="mt-6 flex justify-center">
+                <a href="#rsvp-formular" class="inline-flex items-center gap-2.5 bg-retroCream hover:bg-white text-night-950 font-display font-bold text-lg px-7 py-3 rounded-full shadow-[0_0_25px_rgba(253,240,179,0.45)] transform hover:-translate-y-0.5 transition">
+                    <span>Potvrdit účast na párty</span>
+                    <i class="fa-solid fa-arrow-down text-retroPinkDark"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. DVĚ HLAVNÍ KARTY: DRESS CODE & CO VÁS ČEKÁ? -->
+        <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            
+            <!-- Levá karta: DRESS CODE (levandulová) -->
+            <div class="bg-retroLavender text-night-950 rounded-3xl p-6 sm:p-7 shadow-[0_12px_30px_rgba(0,0,0,0.45)] border-2 border-white/40 flex flex-col justify-between transform hover:-rotate-1 transition duration-300">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 pb-2 border-b-2 border-night-950/15">
+                        <!-- Ikona ramínka na šaty (SVG) -->
+                        <svg class="w-10 h-10 text-night-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 7a2 2 0 1 0-2-2c0 1.5 2 2 2 4v1"/>
+                            <path d="M2.5 18.5 12 12l9.5 6.5a1 1 0 0 1-.56 1.83H3.06a1 1 0 0 1-.56-1.83Z"/>
+                        </svg>
+                        <h2 class="font-display font-extrabold italic text-2xl sm:text-3xl tracking-tight uppercase">
+                            DRESS CODE:
+                        </h2>
+                    </div>
+
+                    <ul class="space-y-2.5 font-sans font-bold italic text-base sm:text-lg">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>90's outfit vítán!</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Džíny, šusťákovky</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Džíska</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Ledvinky</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Barevné brýle</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Tenisky</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>A hlavně vytáhněte ty kousky, za které byste se dnes možná trochu styděli! <span class="text-retroPinkDark not-italic">♡</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pravá karta: CO VÁS ČEKÁ? (krémová) -->
+            <div class="bg-retroCream text-night-950 rounded-3xl p-6 sm:p-7 shadow-[0_12px_30px_rgba(0,0,0,0.45)] border-2 border-white/50 flex flex-col justify-between relative overflow-hidden transform hover:rotate-1 transition duration-300">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 pb-2 border-b-2 border-night-950/15">
+                        <!-- Ikona servírovacího poklopu (SVG) -->
+                        <svg class="w-10 h-10 text-night-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 18h20"/>
+                            <path d="M4 18a8 8 0 0 1 16 0"/>
+                            <path d="M12 7v3"/>
+                            <circle cx="12" cy="6" r="1"/>
+                        </svg>
+                        <h2 class="font-display font-extrabold italic text-2xl sm:text-3xl tracking-tight uppercase">
+                            CO VÁS ČEKÁ?
+                        </h2>
+                    </div>
+
+                    <ul class="space-y-3 font-sans font-extrabold italic text-base sm:text-lg">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Raut <span class="font-medium text-sm sm:text-base">(jídlo po celý večer)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Pití <span class="font-medium text-sm sm:text-base">(na kuráž i na afterparty)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>90's hity <span class="font-medium text-sm sm:text-base">(celý večer)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Tanec <span class="font-medium text-sm sm:text-base">(povinný!)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>Skvělá nálada</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-regular fa-square-check text-night-950 mt-1"></i>
+                            <span>A hlavně vy!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dekorativní ilustrace poklopu v pravém dolním rohu karty jako na plakátu -->
+                <div class="flex justify-end mt-2 opacity-85">
+                    <svg class="w-16 h-14 text-night-950" viewBox="0 0 64 50" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="8" y1="42" x2="56" y2="42"/>
+                        <path d="M12 42 C12 24, 52 24, 52 42"/>
+                        <circle cx="32" cy="24" r="3"/>
+                        <line x1="48" y1="14" x2="54" y2="8"/>
+                        <line x1="54" y1="20" x2="61" y2="17"/>
+                        <line x1="41" y1="10" x2="43" y2="3"/>
+                    </svg>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 4. SEKCE MÍSTO KONÁNÍ & NEONOVÉ SRDCE -->
+        <section id="misto-konani" class="mt-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            
+            <!-- Levá část (7 sloupců): Karta Kalikovský mlýn -->
+            <div class="md:col-span-7 border-2 border-retroGold/80 rounded-3xl overflow-hidden bg-night-900/90 shadow-[0_0_25px_rgba(245,215,127,0.2)]">
+                <!-- Stylizovaná večerní scéna Kalikovského mlýna u vody se světýlky -->
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden bg-gradient-to-b from-[#0f172a] via-[#1e1b4b] to-[#312e81]">
+                    <svg class="w-full h-full object-cover" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice">
+                        <!-- Noční obloha & stromy v pozadí -->
+                        <defs>
+                            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#090d16"/>
+                                <stop offset="100%" stop-color="#1e293b"/>
+                            </linearGradient>
+                            <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1e1b4b"/>
+                                <stop offset="100%" stop-color="#090d16"/>
+                            </linearGradient>
+                            <filter id="warmGlow">
+                                <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="600" height="220" fill="url(#skyGrad)"/>
+                        
+                        <!-- Siluety stromů -->
+                        <path d="M0 180 L30 90 L60 170 L95 70 L130 175 L165 95 L200 180 L430 180 L465 80 L500 175 L535 65 L570 170 L600 100 L600 210 L0 210 Z" fill="#0b1320"/>
+                        
+                        <!-- Budova Kalikovského mlýna -->
+                        <polygon points="210,135 325,75 440,135" fill="#7c2d12"/>
+                        <rect x="220" y="135" width="210" height="75" fill="#fef3c7"/>
+                        <rect x="130" y="155" width="90" height="55" fill="#fde68a"/>
+                        <polygon points="125,155 175,125 220,155" fill="#7c2d12"/>
+                        
+                        <!-- Půlkruhové okno ve štítu -->
+                        <path d="M305 122 A 20 20 0 0 1 345 122 Z" fill="#f59e0b" filter="url(#warmGlow)"/>
+                        
+                        <!-- Nápis na budově -->
+                        <text x="325" y="148" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#451a03">KALIKOVSKÝ</text>
+                        <text x="325" y="160" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#451a03">MLÝN</text>
+                        
+                        <!-- Osvětlená okna mlýna -->
+                        <rect x="240" y="170" width="22" height="28" rx="2" fill="#fbbf24" filter="url(#warmGlow)"/>
+                        <rect x="278" y="170" width="22" height="28" rx="2" fill="#fbbf24" filter="url(#warmGlow)"/>
+                        <rect x="350" y="170" width="22" height="28" rx="2" fill="#fbbf24" filter="url(#warmGlow)"/>
+                        <rect x="388" y="170" width="22" height="28" rx="2" fill="#fbbf24" filter="url(#warmGlow)"/>
+                        
+                        <!-- Terasa a řetězová světýlka -->
+                        <line x1="40" y1="198" x2="560" y2="198" stroke="#451a03" stroke-width="4"/>
+                        <g fill="#fef08a" filter="url(#warmGlow)">
+                            <circle cx="60" cy="192" r="3.5"/><circle cx="95" cy="194" r="3.5"/><circle cx="130" cy="191" r="3.5"/>
+                            <circle cx="165" cy="193" r="3.5"/><circle cx="200" cy="192" r="3.5"/><circle cx="235" cy="194" r="3.5"/>
+                            <circle cx="270" cy="192" r="3.5"/><circle cx="305" cy="193" r="3.5"/><circle cx="340" cy="192" r="3.5"/>
+                            <circle cx="375" cy="194" r="3.5"/><circle cx="410" cy="192" r="3.5"/><circle cx="445" cy="193" r="3.5"/>
+                            <circle cx="480" cy="192" r="3.5"/><circle cx="515" cy="194" r="3.5"/><circle cx="550" cy="191" r="3.5"/>
+                        </g>
+                        
+                        <!-- Voda (řeka Mže / náhon) a odrazy světýlek -->
+                        <rect y="210" width="600" height="110" fill="url(#waterGrad)"/>
+                        <g stroke="#fbbf24" stroke-width="2" stroke-opacity="0.55" stroke-linecap="round">
+                            <line x1="60" y1="225" x2="60" y2="295"/>
+                            <line x1="130" y1="220" x2="130" y2="305"/>
+                            <line x1="200" y1="222" x2="200" y2="290"/>
+                            <line x1="250" y1="218" x2="250" y2="310"/>
+                            <line x1="325" y1="215" x2="325" y2="315"/>
+                            <line x1="395" y1="220" x2="395" y2="300"/>
+                            <line x1="480" y1="225" x2="480" y2="295"/>
+                            <line x1="550" y1="222" x2="550" y2="285"/>
+                        </g>
+                    </svg>
+                    <div class="absolute bottom-3 left-3 bg-night-950/80 backdrop-blur-sm border border-retroGold/50 px-3 py-1 rounded-full text-xs font-semibold text-retroCream">
+                        <i class="fa-solid fa-water text-retroPink mr-1"></i> Kalikovský mlýn • Plzeň
+                    </div>
+                </div>
+
+                <!-- Odkazy na navigaci -->
+                <div class="p-4 sm:p-5 flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-retroCream">Kalikovský mlýn</h3>
+                        <p class="text-sm text-purple-200">Radčická 60/40, 301 00 Plzeň 3</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://mapy.cz/zakladni?q=Kalikovsk%C3%BD%20ml%C3%BDn%2C%20Rad%C4%8Dick%C3%A1%2060%2F40%2C%20Plze%C5%88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-night-800 hover:bg-retroPink text-white text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl border border-retroPink/50 transition">
+                            <i class="fa-solid fa-map-location-dot"></i> Mapy.cz
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kalikovsk%C3%BD+ml%C3%BDn+Rad%C4%8Dick%C3%A1+60%2F40+Plze%C5%88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-night-800 hover:bg-retroPink text-white text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl border border-retroPink/50 transition">
+                            <i class="fa-brands fa-google"></i> Google Mapy
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pravá část (5 sloupců): Neonově svítící růžové srdce -->
+            <div class="md:col-span-5 flex items-center justify-center py-2">
+                <div class="relative w-72 h-64 sm:w-80 sm:h-72 flex items-center justify-center animate-pulse-neon">
+                    <!-- SVG Neonové Srdce -->
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 290" fill="none">
+                        <path d="M160 265 C160 265 25 182 25 92 C25 48 60 18 100 18 C128 18 150 34 160 54 C170 34 192 18 220 18 C260 18 295 48 295 92 C295 182 160 265 160 265 Z" 
+                              fill="rgba(255, 62, 157, 0.14)" 
+                              stroke="#ff6ec7" 
+                              stroke-width="6" 
+                              stroke-linejoin="round"/>
+                        <path d="M160 265 C160 265 25 182 25 92 C25 48 60 18 100 18 C128 18 150 34 160 54 C170 34 192 18 220 18 C260 18 295 48 295 92 C295 182 160 265 160 265 Z" 
+                              stroke="#ffffff" 
+                              stroke-width="1.5" 
+                              stroke-linejoin="round"
+                              opacity="0.8"/>
+                    </svg>
+                    
+                    <!-- Text uvnitř srdce -->
+                    <div class="relative z-10 text-center px-10 -mt-5 transform -rotate-3">
+                        <p class="font-sans font-bold italic text-lg sm:text-xl text-white leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                            Přijďte s námi<br>
+                            rozjet naši<br>
+                            životní velkou<br>
+                            diskotéku! <span class="text-retroCream not-italic">♡</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Závěrečný banner z plakátu: TĚŠÍME SE NA VÁS! Kačka & Andrea ♡ -->
+        <div class="mt-8 flex justify-center">
+            <div class="bg-retroCream text-night-950 px-8 sm:px-14 py-4 rounded-[2.5rem] shadow-[0_0_35px_rgba(253,240,179,0.4)] transform -rotate-2 text-center border-2 border-white">
+                <p class="font-display font-extrabold italic text-xl sm:text-3xl tracking-wide uppercase">
+                    TĚŠÍME SE NA VÁS!
+                </p>
+                <p class="font-hand text-2xl sm:text-3xl font-bold mt-0.5">
+                    Kačka &amp; Andrea <span class="text-retroPinkDark">♡</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 5. INTERAKTIVNÍ SEKCE: POTVRZENÍ ÚČASTI (RSVP FORMULÁŘ) -->
+        <section id="rsvp-formular" class="mt-14 scroll-mt-8">
+            <div class="bg-night-900/90 backdrop-blur-md border-2 border-retroPink rounded-3xl p-6 sm:p-10 shadow-[0_0_40px_rgba(255,62,157,0.25)] relative overflow-hidden">
+                
+                <!-- Dekorativní kazeta v rohu -->
+                <div class="hidden sm:flex items-center gap-2 absolute top-6 right-6 text-retroGold/60 text-xs font-mono border border-retroGold/30 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-compact-disc fa-spin"></i> SIDE A • RSVP 2027
+                </div>
+
+                <div class="text-center sm:text-left mb-6">
+                    <span class="inline-block bg-retroPink text-night-950 font-display font-extrabold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-2">
+                        Online potvrzení účasti
+                    </span>
+                    <h2 class="font-retro text-3xl sm:text-4xl text-retroCream text-shadow-retro">
+                        Potvrzení účasti (RSVP)
+                    </h2>
+                    <p class="text-purple-200 text-sm sm:text-base mt-1">
+                        Dejte nám prosím vědět, zda s vámi můžeme počítat na parketu!
+                    </p>
+                </div>
+
+                <!-- Formulář RSVP -->
+                <form id="rsvpForm" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Jméno a příjmení -->
+                        <div>
+                            <label for="guestName" class="block text-sm font-bold text-retroCream mb-1.5">
+                                Jméno a příjmení <span class="text-retroPink">*</span>
+                            </label>
+                            <input type="text" id="guestName" required placeholder="Např. Jana Nováková"
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition">
+                        </div>
+
+                        <!-- E-mail nebo telefon -->
+                        <div>
+                            <label for="guestContact" class="block text-sm font-bold text-retroCream mb-1.5">
+                                E-mail nebo telefon <span class="text-retroPink">*</span>
+                            </label>
+                            <input type="text" id="guestContact" required placeholder="jana@email.cz / +420 777..."
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- Výběr účasti -->
+                    <div>
+                        <label class="block text-sm font-bold text-retroCream mb-2">
+                            Dorazíte na naši 90's svatební diskotéku? <span class="text-retroPink">*</span>
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="attending" value="yes" checked class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border-2 border-purple-500/40 bg-night-950/70 peer-checked:border-retroCream peer-checked:bg-retroCream peer-checked:text-night-950 font-bold text-center transition flex items-center justify-center gap-2">
+                                    <span>Jasně, dorazím na párty! 🕺💃</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="attending" value="no" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border-2 border-purple-500/40 bg-night-950/70 peer-checked:border-retroPink peer-checked:bg-retroPink peer-checked:text-night-950 font-bold text-center transition flex items-center justify-center gap-2">
+                                    <span>Bohužel se nemohu zúčastnit 😢</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Detaily při účasti (Počet osob + Doprovod) -->
+                    <div id="attendingDetails" class="grid grid-cols-1 sm:grid-cols-3 gap-5 transition-all">
+                        <div>
+                            <label for="guestCount" class="block text-sm font-bold text-retroCream mb-1.5">
+                                Počet osob celkem (včetně mě)
+                            </label>
+                            <select id="guestCount"
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white outline-none transition">
+                                <option value="1">1 osoba (jdu sám/sama)</option>
+                                <option value="2">2 osoby</option>
+                                <option value="3">3 osoby</option>
+                                <option value="4">4 osoby</option>
+                                <option value="5">5 osob</option>
+                            </select>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="companions" class="block text-sm font-bold text-retroCream mb-1.5">
+                                Jména doprovodu / dětí
+                            </label>
+                            <input type="text" id="companions" placeholder="Např. Petr Novák, malý Matýsek (4 roky)"
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- Stravování & Písnička na přání -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="dietary" class="block text-sm font-bold text-retroCream mb-1.5">
+                                Stravovací omezení / alergie
+                            </label>
+                            <input type="text" id="dietary" placeholder="Např. bez lepku, vegetarián, žádné..."
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="songRequest" class="block text-sm font-bold text-retroCream mb-1.5">
+                                🎵 Písnička z 90. let na přání pro DJ
+                            </label>
+                            <input type="text" id="songRequest" placeholder="Např. Haddaway - What Is Love / Lunetic"
+                                class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- Vzkaz pro Kačku a Andreu -->
+                    <div>
+                        <label for="guestMessage" class="block text-sm font-bold text-retroCream mb-1.5">
+                            Vzkaz pro Kačku a Andreu ♡
+                        </label>
+                        <textarea id="guestMessage" rows="2" placeholder="Napište nám cokoli od srdce nebo na co se nejvíc těšíte..."
+                            class="w-full bg-night-950/90 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white placeholder-purple-300/40 outline-none transition"></textarea>
+                    </div>
+
+                    <!-- Odesílací tlačítko -->
+                    <div class="pt-2">
+                        <button type="submit" id="submitRsvpBtn"
+                            class="w-full bg-gradient-to-r from-retroPink to-[#ff6ec7] hover:from-[#ff5eae] hover:to-retroPink text-night-950 font-display font-extrabold text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-[0_0_25px_rgba(255,62,157,0.55)] transform hover:-translate-y-0.5 transition flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>ODESLAT POTVRZENÍ ÚČASTI</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Potvrzovací stav po odeslání formuláře -->
+                <div id="rsvpSuccessBox" class="hidden text-center py-6 space-y-5">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-retroCream text-night-950 flex items-center justify-center text-4xl shadow-[0_0_30px_rgba(253,240,179,0.6)] animate-bounce">
+                        🎉
+                    </div>
+                    <h3 class="font-retro text-3xl text-retroCream">
+                        Pecka! Máš to tam!
+                    </h3>
+                    <p id="rsvpSuccessText" class="text-purple-100 max-w-lg mx-auto text-base sm:text-lg">
+                        Tvoje odpověď byla uložena do našeho svatebního playlistu. Už teď se těšíme, až to spolu rozjedeme!
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <button type="button" id="downloadIcsBtn"
+                            class="inline-flex items-center gap-2 bg-retroCream hover:bg-white text-night-950 font-display font-bold px-6 py-3 rounded-xl shadow-lg transition">
+                            <i class="fa-regular fa-calendar-plus text-retroPinkDark"></i>
+                            <span>Přidat svatbu do kalendáře (.ics)</span>
+                        </button>
+                        <button type="button" id="newRsvpBtn"
+                            class="inline-flex items-center gap-2 bg-night-800 hover:bg-night-700 text-purple-200 font-semibold px-5 py-3 rounded-xl border border-purple-500/40 transition">
+                            Odeslat další odpověď
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PATIČKA S ADMIN PŘÍSTUPEM -->
+        <footer class="mt-14 pt-6 border-t border-retroGold/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-purple-300/75">
+            <p>
+                Kačka &amp; Andrea • 15. 5. 2027 • Kalikovský mlýn, Plzeň ♡
+            </p>
+            <button type="button" id="openAdminModalBtn"
+                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-night-900/80 hover:bg-night-800 border border-purple-500/30 text-purple-200 hover:text-retroCream transition">
+                <i class="fa-solid fa-lock text-retroPink"></i>
+                <span>Admin přístup</span>
+            </button>
+        </footer>
+
+    </main>
+
+    <!-- Spodní synthwave neonová mřížka -->
+    <div class="fixed bottom-0 left-0 right-0 h-32 pointer-events-none z-0 overflow-hidden opacity-60">
+        <div class="w-full h-full synthwave-grid"></div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODÁLNÍ OKNO: PŘIHLÁŠENÍ DO ADMIN PANELU                              -->
+    <!-- ===================================================================== -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-night-950/85 backdrop-blur-md">
+        <div class="bg-night-900 border-2 border-retroGold/80 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-[0_0_50px_rgba(255,62,157,0.3)] relative">
+            <button type="button" id="closeLoginModalBtn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-night-800 hover:bg-retroPink text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-5">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-retroPink/20 border border-retroPink text-retroPink flex items-center justify-center text-2xl mb-3">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h3 class="font-retro text-2xl text-retroCream">Vstup pro nevěsty</h3>
+                <p class="text-sm text-purple-200 mt-1">Správa hostů &amp; svatebního playlistu</p>
+            </div>
+
+            <form id="adminLoginForm" class="space-y-4">
+                <div>
+                    <label for="adminPasswordInput" class="block text-sm font-bold text-retroCream mb-1">
+                        Administrátorské heslo
+                    </label>
+                    <input type="password" id="adminPasswordInput" required placeholder="Zadejte heslo..."
+                        class="w-full bg-night-950 border-2 border-purple-500/40 focus:border-retroPink rounded-xl px-4 py-3 text-white outline-none">
+                </div>
+
+                <p id="loginErrorMsg" class="hidden text-sm text-retroPink font-bold text-center">
+                    Nesprávné heslo! Zkuste to znovu.
+                </p>
+
+                <button type="submit"
+                    class="w-full bg-retroCream hover:bg-white text-night-950 font-display font-extrabold py-3 rounded-xl shadow-lg transition">
+                    Přihlásit se do administrace
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- OVERLAY: ADMIN DASHBOARD (SPRÁVA HOSTŮ)                               -->
+    <!-- ===================================================================== -->
+    <div id="adminDashboardOverlay" class="fixed inset-0 z-50 hidden bg-night-950/95 backdrop-blur-lg overflow-y-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8">
+            
+            <!-- Hlavička Admin dashboardu -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-retroGold/30">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-retroPink mb-1">
+                        <i class="fa-solid fa-crown"></i> VIP Zóna • Kačka &amp; Andrea
+                    </div>
+                    <h2 class="font-retro text-3xl sm:text-4xl text-retroCream">
+                        Přehled svatebních hostů
+                    </h2>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" id="exportCsvBtn"
+                        class="inline-flex items-center gap-2 bg-retroCream hover:bg-white text-night-950 font-display font-bold text-sm px-4 py-2.5 rounded-xl shadow transition">
+                        <i class="fa-solid fa-file-csv text-retroPinkDark"></i>
+                        <span>Exportovat do CSV / Excelu</span>
+                    </button>
+                    <button type="button" id="logoutAdminBtn"
+                        class="inline-flex items-center gap-2 bg-night-800 hover:bg-retroPink text-white font-bold text-sm px-4 py-2.5 rounded-xl border border-purple-500/40 transition">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Odhlásit se</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Souhrnné statistiky -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+                <div class="bg-night-900 border border-purple-500/40 rounded-2xl p-4">
+                    <span class="text-xs font-bold uppercase text-purple-300">Celkem odpovědí</span>
+                    <p id="statTotalResponses" class="font-display font-extrabold text-3xl text-white mt-1">0</p>
+                </div>
+                <div class="bg-night-900 border border-emerald-400/50 rounded-2xl p-4">
+                    <span class="text-xs font-bold uppercase text-emerald-300">Potvrzeno osob (dorazí)</span>
+                    <p id="statConfirmedPeople" class="font-display font-extrabold text-3xl text-emerald-400 mt-1">0</p>
+                </div>
+                <div class="bg-night-900 border border-retroPink/50 rounded-2xl p-4">
+                    <span class="text-xs font-bold uppercase text-retroPink">Omluveno (nedorazí)</span>
+                    <p id="statDeclined" class="font-display font-extrabold text-3xl text-retroPink mt-1">0</p>
+                </div>
+                <div class="bg-night-900 border border-retroGold/50 rounded-2xl p-4">
+                    <span class="text-xs font-bold uppercase text-retroCream">Písniček pro DJ</span>
+                    <p id="statSongsCount" class="font-display font-extrabold text-3xl text-retroCream mt-1">0</p>
+                </div>
+            </div>
+
+            <!-- Filtry a vyhledávání -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-5 bg-night-900/80 p-4 rounded-2xl border border-purple-500/30">
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-sm font-bold bg-retroPink text-night-950 transition">
+                        Všichni
+                    </button>
+                    <button type="button" data-filter="yes" class="filter-btn px-4 py-2 rounded-xl text-sm font-bold bg-night-800 text-purple-200 hover:text-white transition">
+                        Dorazí 🕺
+                    </button>
+                    <button type="button" data-filter="no" class="filter-btn px-4 py-2 rounded-xl text-sm font-bold bg-night-800 text-purple-200 hover:text-white transition">
+                        Nedorazí 😢
+                    </button>
+                </div>
+
+                <div class="relative sm:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-300 text-sm"></i>
+                    <input type="text" id="adminSearchInput" placeholder="Hledat jméno, doprovod, hit..."
+                        class="w-full bg-night-950 border border-purple-500/40 focus:border-retroPink rounded-xl pl-9 pr-4 py-2 text-sm text-white outline-none">
+                </div>
+            </div>
+
+            <!-- Tabulka hostů -->
+            <div class="bg-night-900 border border-purple-500/30 rounded-2xl overflow-hidden shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-night-950 text-retroCream text-xs uppercase tracking-wider border-b border-purple-500/30">
+                                <th class="py-3.5 px-4">Host &amp; Kontakt</th>
+                                <th class="py-3.5 px-4">Účast</th>
+                                <th class="py-3.5 px-4 text-center">Osob</th>
+                                <th class="py-3.5 px-4">Doprovod</th>
+                                <th class="py-3.5 px-4">Strava / Alergie</th>
+                                <th class="py-3.5 px-4">90's Hit na přání</th>
+                                <th class="py-3.5 px-4">Vzkaz</th>
+                                <th class="py-3.5 px-4 text-right">Akce</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminGuestsTableBody" class="divide-y divide-purple-500/20 text-sm">
+                            <!-- Dynamicky plněno z databáze -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="adminEmptyState" class="hidden py-12 text-center text-purple-300">
+                    <i class="fa-solid fa-compact-disc text-4xl text-retroPink/50 mb-3"></i>
+                    <p>Zatím tu nejsou žádné odpovědi odpovídající filtru.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Custom Toast / Notifikační lišta (náhrada za alert/confirm) -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden items-center gap-3 bg-night-900 border-2 border-retroCream text-white px-5 py-3.5 rounded-2xl shadow-2xl">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-retroCream text-xl"></i>
+        <span id="toastText" class="text-sm font-bold"></span>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT & FIREBASE REALTIME DATABÁZE                               -->
+    <!-- ===================================================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, updateDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Globální proměnné prostředí
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'kacka-andrea-90s-wedding';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+        let guestsData = []; // Lokální pole hostů synchronizované s Firestore (nebo fallback)
+        let isAdminLoggedIn = false;
+        let currentFilter = 'all';
+        let searchQuery = '';
+        let pendingDeleteId = null;
+
+        // Pomocná funkce pro zobrazení notifikace místo alert()
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toastNotification');
+            const icon = document.getElementById('toastIcon');
+            const text = document.getElementById('toastText');
+
+            text.textContent = message;
+            if (isError) {
+                toast.classList.replace('border-retroCream', 'border-retroPink');
+                icon.className = 'fa-solid fa-circle-exclamation text-retroPink text-xl';
+            } else {
+                toast.classList.replace('border-retroPink', 'border-retroCream');
+                icon.className = 'fa-solid fa-circle-check text-retroCream text-xl';
+            }
+
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3800);
+        }
+
+        // Inicializace Firebase a autentizace
+        async function initFirebase() {
+            if (!firebaseConfig) {
+                console.warn("Firebase konfigurace není k dispozici, běží lokální ukázkový režim.");
+                return;
+            }
+            try {
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    currentUser = user;
+                    if (user) {
+                        subscribeToGuests();
+                    }
+                });
+            } catch (error) {
+                console.error("Chyba při inicializaci Firebase:", error);
+            }
+        }
+
+        // Odběr dat hostů v reálném čase (RULE 1: /artifacts/{appId}/public/data/rsvp_guests, RULE 2: bez orderBy/where)
+        function subscribeToGuests() {
+            if (!db || !currentUser) return;
+            const guestsRef = collection(db, 'artifacts', appId, 'public', 'data', 'rsvp_guests');
+
+            onSnapshot(guestsRef, (snapshot) => {
+                const loaded = [];
+                snapshot.forEach((docSnap) => {
+                    loaded.push({ id: docSnap.id, ...docSnap.data() });
+                });
+                // Řazení v paměti podle času vytvoření (nejnovější nahoře)
+                loaded.sort((a, b) => {
+                    const timeA = a.createdAt?.seconds || a.clientTimestamp || 0;
+                    const timeB = b.createdAt?.seconds || b.clientTimestamp || 0;
+                    return timeB - timeA;
+                });
+                guestsData = loaded;
+                if (isAdminLoggedIn) {
+                    renderAdminDashboard();
+                }
+            }, (error) => {
+                console.error("Chyba při načítání hostů:", error);
+            });
+        }
+
+        // ---------------------------------------------------------------------
+        // ŽIVÝ ODPOČET DO SVATBY (15. 5. 2027 14:00)
+        // ---------------------------------------------------------------------
+        function updateCountdown() {
+            const weddingDate = new Date('2027-05-15T14:00:00+02:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+            const badge = document.getElementById('countdown-badge');
+
+            if (!badge) return;
+
+            if (diff <= 0) {
+                badge.textContent = "Dnes je ten velký den! 🎉";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            badge.textContent = `Zbývá ${days} dní a ${hours} hod.`;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        // ---------------------------------------------------------------------
+        // LOGIKA RSVP FORMULÁŘE
+        // ---------------------------------------------------------------------
+        const rsvpForm = document.getElementById('rsvpForm');
+        const attendingRadios = document.querySelectorAll('input[name="attending"]');
+        const attendingDetails = document.getElementById('attendingDetails');
+        const guestCountSelect = document.getElementById('guestCount');
+
+        // Přepínání viditelnosti/aktivity počtu osob podle účasti
+        attendingRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'yes') {
+                    attendingDetails.classList.remove('opacity-40', 'pointer-events-none');
+                } else {
+                    attendingDetails.classList.add('opacity-40', 'pointer-events-none');
+                }
+            });
+        });
+
+        // Odeslání formuláře
+        rsvpForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitRsvpBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Ukládám...</span>';
+
+            const attendingValue = document.querySelector('input[name="attending"]:checked').value;
+            const isAttending = attendingValue === 'yes';
+
+            const payload = {
+                name: document.getElementById('guestName').value.trim(),
+                contact: document.getElementById('guestContact').value.trim(),
+                attending: isAttending,
+                count: isAttending ? parseInt(guestCountSelect.value, 10) : 0,
+                companions: isAttending ? document.getElementById('companions').value.trim() : '',
+                dietary: document.getElementById('dietary').value.trim(),
+                song: document.getElementById('songRequest').value.trim(),
+                message: document.getElementById('guestMessage').value.trim(),
+                clientTimestamp: Math.floor(Date.now() / 1000),
+                createdAtText: new Date().toLocaleDateString('cs-CZ')
+            };
+
+            try {
+                if (db && currentUser) {
+                    const guestsRef = collection(db, 'artifacts', appId, 'public', 'data', 'rsvp_guests');
+                    await addDoc(guestsRef, {
+                        ...payload,
+                        createdAt: serverTimestamp()
+                    });
+                } else {
+                    // Fallback do paměti, pokud není aktivní Firestore
+                    guestsData.unshift({ id: 'local-' + Date.now(), ...payload });
+                }
+
+                // Zobrazení potvrzení
+                rsvpForm.classList.add('hidden');
+                const successBox = document.getElementById('rsvpSuccessBox');
+                const successText = document.getElementById('rsvpSuccessText');
+                
+                if (isAttending) {
+                    successText.textContent = `Děkujeme, ${payload.name}! Počítáme s tebou (${payload.count} os.) na největší 90's diskotéce roku 2027!`;
+                } else {
+                    successText.textContent = `Děkujeme za zprávu, ${payload.name}. Škoda, že to nevyjde, připijeme si na tebe!`;
+                }
+
+                successBox.classList.remove('hidden');
+                showToast('Potvrzení účasti bylo úspěšně uloženo!');
+            } catch (err) {
+                console.error("Chyba při ukládání RSVP:", err);
+                showToast('Nepodařilo se uložit odpověď. Zkuste to prosím znovu.', true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>ODESLAT POTVRZENÍ ÚČASTI</span>';
+            }
+        });
+
+        // Tlačítko pro odeslání další odpovědi
+        document.getElementById('newRsvpBtn').addEventListener('click', () => {
+            rsvpForm.reset();
+            attendingDetails.classList.remove('opacity-40', 'pointer-events-none');
+            document.getElementById('rsvpSuccessBox').classList.add('hidden');
+            rsvpForm.classList.remove('hidden');
+        });
+
+        // Stažení .ics souboru do kalendáře
+        document.getElementById('downloadIcsBtn').addEventListener('click', () => {
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Kacka a Andrea Svatba//90s HITS//CZ',
+                'BEGIN:VEVENT',
+                'UID:svatba-kacka-andrea-20270515@kalikovskymlyn.cz',
+                'DTSTAMP:20261116T120000Z',
+                'DTSTART:20270515T120000Z',
+                'DTEND:20270516T010000Z',
+                'SUMMARY:Kačka & Andrea SE BEROU! (90\'s HITS Svatba)',
+                'DESCRIPTION:Svatba & diskotéka v jednom! Obřad ve 14:00. Dress code: 90\'s outfit vítán (džíny, šusťákovky, džíska, ledvinky).',
+                'LOCATION:Kalikovský mlýn, Radčická 60/40, 301 00 Plzeň',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'svatba-kacka-andrea-2027.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Událost do kalendáře byla stažena.');
+        });
+
+        // ---------------------------------------------------------------------
+        // ADMINISTRÁTORSKÝ PŘÍSTUP & DASHBOARD
+        // ---------------------------------------------------------------------
+        const adminLoginModal = document.getElementById('adminLoginModal');
+        const adminDashboardOverlay = document.getElementById('adminDashboardOverlay');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const adminPasswordInput = document.getElementById('adminPasswordInput');
+        const loginErrorMsg = document.getElementById('loginErrorMsg');
+
+        // Otevření modálu
+        document.getElementById('openAdminModalBtn').addEventListener('click', () => {
+            if (isAdminLoggedIn) {
+                adminDashboardOverlay.classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                loginErrorMsg.classList.add('hidden');
+                adminPasswordInput.value = '';
+                adminLoginModal.classList.remove('hidden');
+                adminLoginModal.classList.add('flex');
+                setTimeout(() => adminPasswordInput.focus(), 100);
+            }
+        });
+
+        // Zavření modálu
+        document.getElementById('closeLoginModalBtn').addEventListener('click', () => {
+            adminLoginModal.classList.add('hidden');
+            adminLoginModal.classList.remove('flex');
+        });
+
+        // Ověření hesla
+        adminLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pwd = adminPasswordInput.value.trim();
+            if (pwd === '90sHITS' || pwd === 'svatba2027') {
+                isAdminLoggedIn = true;
+                adminLoginModal.classList.add('hidden');
+                adminLoginModal.classList.remove('flex');
+                adminDashboardOverlay.classList.remove('hidden');
+                renderAdminDashboard();
+                showToast('Vítejte v administraci svatby!');
+            } else {
+                loginErrorMsg.classList.remove('hidden');
+            }
+        });
+
+        // Odhlášení z adminu
+        document.getElementById('logoutAdminBtn').addEventListener('click', () => {
+            isAdminLoggedIn = false;
+            adminDashboardOverlay.classList.add('hidden');
+            showToast('Odhlášeno z administrace.');
+        });
+
+        // Filtry a vyhledávání
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-retroPink', 'text-night-950');
+                    b.classList.add('bg-night-800', 'text-purple-200');
+                });
+                btn.classList.remove('bg-night-800', 'text-purple-200');
+                btn.classList.add('bg-retroPink', 'text-night-950');
+                currentFilter = btn.dataset.filter;
+                renderAdminDashboard();
+            });
+        });
+
+        document.getElementById('adminSearchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            renderAdminDashboard();
+        });
+
+        // Vykreslení tabulky a statistik v Admin panelu
+        function renderAdminDashboard() {
+            // 1. Statistiky
+            const totalResponses = guestsData.length;
+            const confirmedPeople = guestsData
+                .filter(g => g.attending)
+                .reduce((sum, g) => sum + (Number(g.count) || 1), 0);
+            const declinedResponses = guestsData.filter(g => !g.attending).length;
+            const songsCount = guestsData.filter(g => g.song && g.song.trim() !== '').length;
+
+            document.getElementById('statTotalResponses').textContent = totalResponses;
+            document.getElementById('statConfirmedPeople').textContent = confirmedPeople;
+            document.getElementById('statDeclined').textContent = declinedResponses;
+            document.getElementById('statSongsCount').textContent = songsCount;
+
+            // 2. Filtrování dat
+            const filtered = guestsData.filter(g => {
+                if (currentFilter === 'yes' && !g.attending) return false;
+                if (currentFilter === 'no' && g.attending) return false;
+                if (searchQuery) {
+                    const haystack = `${g.name} ${g.contact} ${g.companions} ${g.song} ${g.dietary}`.toLowerCase();
+                    if (!haystack.includes(searchQuery)) return false;
+                }
+                return true;
+            });
+
+            const tbody = document.getElementById('adminGuestsTableBody');
+            const emptyState = document.getElementById('adminEmptyState');
+            tbody.innerHTML = '';
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            filtered.forEach(guest => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-night-800/60 transition';
+
+                const statusBadge = guest.attending
+                    ? `<span class="inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 px-2.5 py-0.5 rounded-full text-xs font-bold">Dorazí</span>`
+                    : `<span class="inline-flex items-center gap-1 bg-retroPink/20 text-retroPink border border-retroPink/40 px-2.5 py-0.5 rounded-full text-xs font-bold">Nedorazí</span>`;
+
+                const isPendingDelete = pendingDeleteId === guest.id;
+                const deleteBtnHtml = isPendingDelete
+                    ? `<button type="button" data-action="confirm-delete" data-id="${guest.id}" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg transition">Opravdu smazat?</button>`
+                    : `<button type="button" data-action="delete" data-id="${guest.id}" title="Smazat záznam" class="text-purple-300 hover:text-retroPink p-1.5 transition"><i class="fa-solid fa-trash"></i></button>`;
+
+                tr.innerHTML = `
+                    <td class="py-3.5 px-4">
+                        <div class="font-bold text-white">${escapeHtml(guest.name)}</div>
+                        <div class="text-xs text-purple-300">${escapeHtml(guest.contact)}</div>
+                        <div class="text-[11px] text-purple-400/70 mt-0.5">${escapeHtml(guest.createdAtText || '')}</div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <div class="flex items-center gap-2">
+                            ${statusBadge}
+                            <button type="button" data-action="toggle" data-id="${guest.id}" title="Změnit stav účasti" class="text-xs text-purple-300 hover:text-retroCream underline">
+                                Změnit
+                            </button>
+                        </div>
+                    </td>
+                    <td class="py-3.5 px-4 text-center font-display font-bold text-base text-retroCream">
+                        ${guest.attending ? (guest.count || 1) : 0}
+                    </td>
+                    <td class="py-3.5 px-4 text-purple-100 max-w-[160px]">
+                        ${guest.companions ? escapeHtml(guest.companions) : '<span class="text-purple-400/50">—</span>'}
+                    </td>
+                    <td class="py-3.5 px-4 text-purple-100 max-w-[150px]">
+                        ${guest.dietary ? escapeHtml(guest.dietary) : '<span class="text-purple-400/50">—</span>'}
+                    </td>
+                    <td class="py-3.5 px-4 text-retroCream font-medium max-w-[170px]">
+                        ${guest.song ? `<i class="fa-solid fa-music text-retroPink mr-1 text-xs"></i>${escapeHtml(guest.song)}` : '<span class="text-purple-400/50">—</span>'}
+                    </td>
+                    <td class="py-3.5 px-4 text-purple-200 text-xs max-w-[200px]">
+                        ${guest.message ? escapeHtml(guest.message) : '<span class="text-purple-400/50">—</span>'}
+                    </td>
+                    <td class="py-3.5 px-4 text-right whitespace-nowrap">
+                        ${deleteBtnHtml}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Akce v tabulce (změna stavu / smazání bez confirm())
+        document.getElementById('adminGuestsTableBody').addEventListener('click', async (e) => {
+            const btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+
+            const action = btn.dataset.action;
+            const id = btn.dataset.id;
+            const guest = guestsData.find(g => g.id === id);
+            if (!guest) return;
+
+            if (action === 'toggle') {
+                const newStatus = !guest.attending;
+                const newCount = newStatus ? (guest.count > 0 ? guest.count : 1) : 0;
+                try {
+                    if (db && currentUser && !id.startsWith('local-')) {
+                        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rsvp_guests', id);
+                        await updateDoc(docRef, { attending: newStatus, count: newCount });
+                    } else {
+                        guest.attending = newStatus;
+                        guest.count = newCount;
+                        renderAdminDashboard();
+                    }
+                    showToast(`Stav hosta ${guest.name} byl upraven.`);
+                } catch (err) {
+                    console.error(err);
+                    showToast('Chyba při úpravě záznamu.', true);
+                }
+            } else if (action === 'delete') {
+                pendingDeleteId = id;
+                renderAdminDashboard();
+                setTimeout(() => {
+                    if (pendingDeleteId === id) {
+                        pendingDeleteId = null;
+                        renderAdminDashboard();
+                    }
+                }, 4000);
+            } else if (action === 'confirm-delete') {
+                pendingDeleteId = null;
+                try {
+                    if (db && currentUser && !id.startsWith('local-')) {
+                        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rsvp_guests', id);
+                        await deleteDoc(docRef);
+                    } else {
+                        guestsData = guestsData.filter(g => g.id !== id);
+                        renderAdminDashboard();
+                    }
+                    showToast('Záznam hosta byl smazán.');
+                } catch (err) {
+                    console.error(err);
+                    showToast('Chyba při mazání záznamu.', true);
+                }
+            }
+        });
+
+        // Export seznamu hostů do CSV / Excelu
+        document.getElementById('exportCsvBtn').addEventListener('click', () => {
+            if (guestsData.length === 0) {
+                showToast('Žádná data k exportu.', true);
+                return;
+            }
+
+            const headers = ['Jméno a příjmení', 'Kontakt', 'Účast', 'Počet osob', 'Doprovod', 'Stravovací omezení', 'Písnička z 90. let', 'Vzkaz', 'Datum'];
+            const rows = guestsData.map(g => [
+                g.name || '',
+                g.contact || '',
+                g.attending ? 'Dorazí' : 'Nedorazí',
+                g.attending ? (g.count || 1) : 0,
+                g.companions || '',
+                g.dietary || '',
+                g.song || '',
+                g.message || '',
+                g.createdAtText || ''
+            ].map(val => `"${String(val).replace(/"/g, '""')}"`).join(';'));
+
+            // BOM pro správné otevření české diakritiky v Excelu
+            const csvContent = '\uFEFF' + [headers.join(';'), ...rows].join('\r\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'seznam-hostu-kacka-andrea-2027.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Seznam hostů byl exportován do CSV.');
+        });
+
+        // Bezpečné escapování HTML
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Spuštění aplikace
+        initFirebase();
+    </script>
+</body>
+</html>
